@@ -8,6 +8,7 @@ const {
 
 router
   .route("/")
+  .get(userController.index)
   .post(validateBody(schemas.todoSchema), userController.newTodo);
 
 router
