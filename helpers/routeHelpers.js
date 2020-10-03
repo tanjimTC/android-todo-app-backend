@@ -1,5 +1,4 @@
 const Joi = require("joi");
-const { Schema } = require("mongoose");
 
 module.exports = {
   validateParam: (schema, name) => {
@@ -46,18 +45,8 @@ module.exports = {
         .regex(/^[0-9a-fA-F]{24}$/)
         .required(),
     }),
-    userSchema: Joi.object().keys({
-      firstName: Joi.string().required(),
-      lastName: Joi.string().required(),
-      email: Joi.string().email().required(),
-    }),
-    blogSchema: Joi.object().keys({
-      blogTitle: Joi.string().required(),
-    }),
-    userOptionalSchema: Joi.object().keys({
-      blogTitle: Joi.string().required(),
-      date: Joi.any(),
-      blogText: Joi.string().required(),
+    todoSchema: Joi.object().keys({
+      todoTitle: Joi.string().required(),
     }),
   },
 };

@@ -17,14 +17,12 @@ const app = express();
 app.use(helmet());
 
 //Routes
-const users = require("./routes/users");
-const todos = require("./routes/blogs");
+const todos = require("./routes/todos");
 // Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
 // Routes
-app.use("/users", users);
 app.use("/todos", todos);
 
 // Catch 404 Errors and send them to Error handler
